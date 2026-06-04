@@ -1,0 +1,68 @@
+* { padding: 0; margin: 0; font-family: 'Open Sans', sans-serif;}
+html, body { font-size: 12px; line-height: 16px; background: #fff; height: 100%; text-align:center;font-weight: 300;color: #4d4d4d;}
+div	{ border: solid 0 #000; }
+img { border: 0; }
+h1{font-size: 36px;line-height: 38px;font-weight: 700;color: #000;padding: 0 0 12px;text-transform: uppercase}
+h2{font-size: 30px;font-weight: 300;color: #00a0c6;line-height: 32px;padding: 0 0 12px}
+h3{font-size: 22px;line-height: 26px;color: #666;padding: 0 0 12px;font-weight: 400}
+h4{color:#00a0c6;font-size: 16px;font-weight: 300; line-height: 22px;padding: 0 0 12px}
+h4 b{font-weight: 700}
+p{padding: 10px 0}
+a{color: #00a0c6;text-decoration: underline}
+.main { min-height: 100%; width:1020px;margin:0 auto;position: relative;z-index: 1}
+.main-rez{height: 95px; clear:both}
+.footer {color: #fff;height: 55px;width:1020px;margin:-80px auto 0;background: #1994c1;position: relative;z-index: 5}
+.main,.footer{text-align:left}
+.carousel{height: 235px;overflow: hidden;position: relative;clear: right;width: 1020px;}
+.carousel_wrap{position: relative;width: 1020px;float: right;overflow: hidden;}
+.carousel_list{width: 1020px;position: relative;z-index: 1;font-size: 0;line-height: 1;white-space: nowrap;height: 235px;}
+.carousel_list li{list-style: none;margin: 0;padding: 0;font-size: 0;line-height: 0;display: inline-block;position: relative;height: 235px;width: 1020px;}
+.carousel_img{position: absolute;left: 0;top: 0}
+.carousel_textNode{position: absolute;right: 0;top: 0;bottom: 0;height: 235px;line-height: 235px;padding: 0 20px;background: #a29873;width: 250px;}
+.carousel_text{display: inline-block;vertical-align: middle;line-height: 28px;font-size: 20px;color: #fff;font-weight: 400}
+.carousel_dots{position: absolute;left: 25%;width:50%;bottom: 8px;font-size: 0;line-height: 0;z-index: 5;text-align: center}
+.carousel_dots a{display: inline-block;overflow: hidden;height: 11px;width: 11px;background: url("../images/icon-dots.png") no-repeat 0 -11px;content: '';text-decoration: none;margin: 0 5px}
+.carousel_dots a.active{background-position: 0 0}
+.header{position: relative;height: 130px;}
+.logo{position: absolute;left: 25px;top: 40px;}
+.top_menu{position: absolute;right: 0;top: 55px;font-size: 0;line-height: 1px;text-align: right}
+.icon-home{display: inline-block;width:13px;height: 14px;background: url("../images/icon-home_b.png") no-repeat left center }
+.top_menu a{display: inline-block;font-size: 15px;line-height: 20px;color: #000;text-decoration: none;padding: 12px 20px;border-left: solid 2px #61b6d4;text-transform: uppercase}
+.top_menu a:first-child{border-width: 0}
+.top_menu a:hover,.top_menu a.act{color: #fff;background: #1994c1;}
+.top_menu a:hover .icon-home,.top_menu a.act .icon-home{background-image: url("../images/icon-home_w.png")}
+.clear{clear: both}
+.content{width: 980px;margin: 0 auto;padding: 20px 0;}
+.columns{position: relative;overflow: hidden}
+.column{float: left;width: 460px;margin: 0 0 0 60px;}
+.column:first-child{margin: 0}
+.specials{position: relative;overflow: hidden}
+.specialItem{position: relative;overflow: hidden;border-top: solid 2px #d9d9d9;padding: 10px 0 15px;}
+.specialItem:first-child{border-width: 0;padding-top: 0}
+.specialItem_pix{float: left;width:160px;overflow: hidden }
+.specialItem_desc{margin: 0 0 0 180px;}
+.specialItem_desc p {padding: 3px 0 6px;color: #000}
+.everStudio{position:absolute; right:45px; top:15px;font-size: 10px;width: 180px;}
+.everStudio table{color:#fff}
+.everStudio th{text-align:right;vertical-align:middle;padding:0;width: 62px;font-size: 0;line-height: 0}
+.everStudio td{vertical-align:middle;text-align:right;padding:0 10px 0 0;line-height: 12px;}
+.everStudio a{text-decoration:none;white-space:nowrap; color:#fff}
+.everStudio a:hover{text-decoration:underline}
+.logo_footer{position: absolute;left: 50px;top: 18px}
+/*Form*/
+.form1{;margin:10px 0 0}
+.form1 td{padding:2px 0 0;vertical-align:top}
+.form1,.form1 strong{font-weight:300;}
+.form1 strong{padding:8px 0 0 5px;display: block;}
+.form1 textarea,.form1 input{width:415px;margin:0 0 4px;font-size:15px;padding:4px 12px;border:solid 1px #bfbfbf;background:#fff}
+.form1 textarea{margin-bottom:8px;resize: none}
+.form1 .clear-form{width:83px;height:25px;margin-right:10px;cursor:pointer;vertical-align:top}
+.form1 input.send-form{width:77px;height:33px;border:solid 0 #fff;cursor:pointer;padding:0;margin:0;background:url("../images/btn-send.png");float: right}
+.form1 .control-form{text-align:right}
+.form-message{font-size:18px;line-height:18px;padding:8px 0}
+.socials{position: absolute;top: 15px;text-align: center;font-size: 0;line-height: 0;left: 350px;right: 350px;}
+.socials a{margin: 0 2px}
+.header_pic{overflow: hidden;text-align: center;font-size: 0;line-height: 0}
+.subContent{padding: 20px 0 0}
+.font_14{font-size: 14px;line-height: 18px}
+.font_16{font-size: 16px;line-height: 22px}

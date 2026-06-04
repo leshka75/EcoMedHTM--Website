@@ -1,0 +1,8 @@
+.carousel_list li,
+.carousel_text,
+.carousel_dots a,
+.icon-home,
+.top_menu a{
+    display: inline;
+    zoom:1;
+}
