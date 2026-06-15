@@ -81,7 +81,9 @@ a{color: #00a0c6;text-decoration: underline}
     .top_menu a{padding: 8px 10px;font-size: 13px;}
     .carousel,.carousel_wrap,.carousel_list,.carousel_list li{height: 180px;}
     .carousel_textNode{display:none;}
+    .columns{display:flex;flex-direction:column;}
     .column{float:none;width:100%;margin: 0 0 30px;}
+    .specials-col{order:-1;}
     .specialItem_pix{float:none;width:100%;margin: 0 0 10px;}
     .specialItem_desc{margin:0;}
     .footer{height:auto;margin-top:20px;padding: 15px 0;}
