@@ -1,4 +1,5 @@
 * { padding: 0; margin: 0; font-family: 'Open Sans', sans-serif;}
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 html, body { font-size: 12px; line-height: 16px; background: #fff; height: 100%; text-align:center;font-weight: 300;color: #4d4d4d;}
 div	{ border: solid 0 #000; }
 img { border: 0; }
