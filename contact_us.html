@@ -18,6 +18,7 @@
 <!--[if IE 7]>
 	<link href="css/ie7.css" rel="stylesheet" type="text/css" >
 <![endif]-->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/general.js"></script>
 </head>
@@ -53,58 +54,75 @@
 					Web: <a href="https://www.ecomedhtm.com">www.ecomedhtm.com</a></p>
                 </div>
                 <div class="column">
-                    <form id="contactform" method="post" action="https://www.4everstudio.com/clientfiles/ecomedhtm/contact_us.php" onSubmit="return chk(this)">
-                        <input type="hidden" name="posted" value="1">
+                    <form id="contact-form" method="post" action="/submit">
                         <table class="form1">
 
             <tr>
-                <td><input name="firstName" value="NAME" type="text" class="inp_txt" onfocus="javascript: if(this.value=='NAME') this.value = ''" onblur="javascript: if(this.value == '') { this.value = 'NAME';}"></td>
+                <td><input name="name" type="text" class="inp_txt" placeholder="NAME" required></td>
             </tr>
 
             <tr>
-                <td><input name="email" value="E-MAIL" type="text" class="inp_txt" onfocus="javascript: if(this.value=='E-MAIL') this.value = ''" onblur="javascript: if(this.value == '') { this.value = 'E-MAIL';}"></td>
+                <td><input name="email" type="email" class="inp_txt" placeholder="E-MAIL" required></td>
             </tr>
 
             <tr>
-                <td><input name="phone" value="PHONE" type="text" class="inp_txt" onfocus="javascript: if(this.value=='PHONE') this.value = ''" onblur="javascript: if(this.value == '') { this.value = 'PHONE';}"></td>
+                <td><input name="phone" type="text" class="inp_txt" placeholder="PHONE"></td>
             </tr>
 
             <tr>
-                <td><input name="subject" value="SUBJECT" type="text" class="inp_txt" onfocus="javascript: if(this.value=='SUBJECT') this.value = ''" onblur="javascript: if(this.value == '') { this.value = 'SUBJECT';}"></td>
+                <td><input name="subject" type="text" class="inp_txt" placeholder="SUBJECT"></td>
             </tr>
 
 		    <tr>
                 <td>
-                    <textarea name="mess" rows="2" cols="2" class="inp_area"  onfocus="javascript: if(this.value=='MESSAGE') this.value = ''" onblur="javascript: if(this.value == '') { this.value = 'MESSAGE';}">MESSAGE</textarea>
+                    <textarea name="message" rows="2" cols="2" class="inp_area" placeholder="MESSAGE" required></textarea>
                 </td>
             </tr>
 
                             <tr>
                                 <td colspan="2">
+                                    <div class="cf-turnstile" data-sitekey="0x4AAAAAADgBucCX8WxmOlc5"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
                                     <input type="submit" class="send-form" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div id="form-status" class="form-status" aria-live="polite"></div>
                                 </td>
                             </tr>
                         </table>
                     </form>
-                    <div><i></i></div>                    <script>
-                        function chk(it) {
-                        var re=/[^\s]+/i;
-						if (!re.test(it["firstName"].value)){
-							 alert("Please, enter your Name!");
-							 it["firstName"].focus();
-							 return false;
-							}var re=/\b[A-Z0-9._%-]+@[A-Z0-9._%-]+\.[A-Z]{2,4}\b/i;
-						if (!re.test(it["email"].value)){
-							 alert("Please, enter your email!");
-							 it["email"].focus();
-							 return false;
-							}var re=/[^\s]+/i;
-						if (!re.test(it["mess"].value)){
-							 alert("Please, enter your message!");
-							 it["mess"].focus();
-							 return false;
-							}                            return true;
+                    <div><i></i></div>
+                    <script>
+                    document.getElementById('contact-form').addEventListener('submit', async function(e){
+                        e.preventDefault();
+                        var form = e.target;
+                        var btn = form.querySelector('.send-form');
+                        var status = document.getElementById('form-status');
+                        btn.disabled = true;
+                        status.className = 'form-status';
+                        status.textContent = 'Sending…';
+                        try {
+                            var res = await fetch('/submit', { method: 'POST', body: new FormData(form) });
+                            var json = await res.json();
+                            if (json.ok) {
+                                form.reset();
+                                status.className = 'form-status form-status--ok';
+                                status.textContent = 'Thank you — we will be in touch shortly.';
+                            } else {
+                                status.className = 'form-status form-status--err';
+                                status.textContent = json.error || 'Something went wrong. Please try again.';
+                            }
+                        } catch (err) {
+                            status.className = 'form-status form-status--err';
+                            status.textContent = 'Something went wrong. Please try again.';
                         }
+                        btn.disabled = false;
+                    });
                     </script>
                 </div>
                 <div class="clear"></div>

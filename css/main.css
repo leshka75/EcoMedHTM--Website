@@ -60,6 +60,9 @@ a{color: #00a0c6;text-decoration: underline}
 .form1 .clear-form{width:83px;height:25px;margin-right:10px;cursor:pointer;vertical-align:top}
 .form1 input.send-form{width:77px;height:33px;border:solid 0 #fff;cursor:pointer;padding:0;margin:0;background:url("../images/btn-send.png");float: right}
 .form1 .control-form{text-align:right}
+.form-status{font-size:14px;margin-top:8px;min-height:18px;line-height:1.5}
+.form-status--ok{color:#3a8a3a}
+.form-status--err{color:#c0392b}
 .form-message{font-size:18px;line-height:18px;padding:8px 0}
 .socials{position: absolute;top: 15px;text-align: center;font-size: 0;line-height: 0;left: 350px;right: 350px;}
 .socials a{margin: 0 2px}
